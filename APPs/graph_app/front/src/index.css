@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background: #efefef;
+  color: #333;
+}
+
+
+img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.container {
+  width: 100%;
+  height: auto;
+  max-width: 1280px;
+  margin: auto;
+}
+
+
+ol,
+ul {
+  list-style: none;
+}
