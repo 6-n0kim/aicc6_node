@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import HeadTitle from './HeadTitle';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchVisitors } from '../../redux/slices/apiSlice';
+import React, { useEffect } from "react";
+import HeadTitle from "./HeadTitle";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchVisitors } from "../../redux/slices/apiSlice";
 import {
   LineChart,
   Line,
@@ -11,10 +11,10 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 
 const formatTooltipValue = (name, value) => {
-  return `${name.replace('_', ' ')} : ${value}`;
+  return `${name.replace("_", " ")} : ${value}`;
 };
 
 const CustomTooltip = ({ payload }) => {
@@ -88,14 +88,14 @@ const Visitors = () => {
                 axisLine={false}
                 ticks={[0, 100, 200, 300, 400]}
                 tick={{
-                  fill: '#777',
+                  fill: "#777",
                   fontSize: 14,
                 }}
               />
               <Tooltip content={<CustomTooltip />} />
               <Legend
                 iconType="square"
-                formatter={(value) => value.replace('_', ' ')}
+                formatter={(value) => value.replace("_", " ")}
               />
               <Line
                 dot={false}

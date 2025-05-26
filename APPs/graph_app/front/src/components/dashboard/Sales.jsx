@@ -1,7 +1,7 @@
-import React from 'react';
-import HeadTitle from './HeadTitle';
-import { Icons } from '../../assets/icons';
-import { SALES_LISTS } from '../../constants/menuLists';
+import React from "react";
+import HeadTitle from "./HeadTitle";
+import { Icons } from "../../assets/icons";
+import { SALES_LISTS } from "../../constants/menuLists";
 
 const Sales = () => {
   return (
