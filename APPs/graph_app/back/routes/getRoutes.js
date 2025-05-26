@@ -23,9 +23,4 @@ routes.forEach((route) => {
   );
 });
 
-
 module.exports = router;
-
-
-
-
