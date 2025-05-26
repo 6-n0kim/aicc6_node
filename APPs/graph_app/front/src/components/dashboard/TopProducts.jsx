@@ -11,7 +11,8 @@ const TopProducts = () => {
     dispatch(fetchTopProducts());
   }, [dispatch]);
 
-  console.log(state);
+  //  console.log(state);
+
   return (
     <div className="block-wrap w-full lg:w-auto">
       <HeadTitle title="Top Products" />
@@ -25,7 +26,23 @@ const TopProducts = () => {
               <th className="tbl-title hidden lg:table-cell">Sales</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            {state?.map((item, idx) => (
+              <tr key={idx}>
+                <td className="tbl-data">{item.id}</td>
+                <td className="tbl-data">{item.name}</td>
+                <td className="tbl-data">
+                  <div className="bg-[#c3d3e2] min-w-[180px] h-[5px] rounded-full overflow-hidden relative">
+                    <div
+                      className="bg-[#0095ff] left-0 top-0 rounded-full absolute h-full"
+                      style={{ width: `${item.papularitypercent}%` }}
+                    ></div>
+                  </div>
+                </td>
+                <td className="tbl-data">{item.salespercent}%</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

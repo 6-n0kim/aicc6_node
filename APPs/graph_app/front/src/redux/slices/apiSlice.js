@@ -15,6 +15,7 @@ import {
   GET_CUSTOMERS_API_URL,
   GET_TARGET_REALITY_API_URL,
   GET_TOP_PRODUCTS_API_URL,
+  GET_SALES_MAP_API_URL,
 } from '../../constants/apiUrls';
 import { getRequest } from '../../constants/methods';
 
@@ -55,6 +56,12 @@ export const fetchTopProducts = createFetchThunk(
   GET_TOP_PRODUCTS_API_URL
 );
 
+// GET Sales Map data
+export const fetchSalesMap = createFetchThunk(
+  'fetchSalesMap', // action type
+  GET_SALES_MAP_API_URL
+);
+
 // 요청 성공 시 함수 정의
 const handleFullfilled = (stateKey) => (state, action) => {
   state[stateKey] = action.payload; // payload는 요청 성공 시 받은 데이터
@@ -74,6 +81,7 @@ const apiSlice = createSlice({
     customersData: null,
     targetRealityData: null,
     topProductsData: null,
+    salesMapData: null,
   },
   extraReducers: (builder) => {
     builder
@@ -93,7 +101,10 @@ const apiSlice = createSlice({
       .addCase(fetchTargetReality.rejected, handleRejected)
 
       .addCase(fetchTopProducts.fulfilled, handleFullfilled('topProductsData'))
-      .addCase(fetchTopProducts.rejected, handleRejected);
+      .addCase(fetchTopProducts.rejected, handleRejected)
+
+      .addCase(fetchSalesMap.fulfilled, handleFullfilled('salesMapData'))
+      .addCase(fetchSalesMap.rejected, handleRejected);
   },
 });
 
