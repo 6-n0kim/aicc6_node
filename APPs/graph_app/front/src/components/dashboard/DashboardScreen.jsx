@@ -1,9 +1,10 @@
-import React from 'react';
-import Sales from './Sales';
-import Visitors from './Visitors';
-import Revenue from './Revenue';
-import Customers from './Customers';
-import TargetReality from './TargetReality';
+import React from "react";
+import Sales from "./Sales";
+import Visitors from "./Visitors";
+import Revenue from "./Revenue";
+import Customers from "./Customers";
+import TargetReality from "./TargetReality";
+import TopProducts from "./TopProducts";
 
 const DashboardScreen = () => {
   return (
@@ -16,6 +17,7 @@ const DashboardScreen = () => {
         <Revenue />
         <Customers />
         <TargetReality />
+        <TopProducts />
       </div>
     </div>
   );

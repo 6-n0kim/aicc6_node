@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import HeadTitle from './HeadTitle';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchTargetReality } from '../../redux/slices/apiSlice';
-import { BarChart, Bar, ResponsiveContainer, XAxis } from 'recharts';
-import { TARGET_REALITY_LISTS } from '../../constants/menuLists';
+import React, { useEffect } from "react";
+import HeadTitle from "./HeadTitle";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTargetReality } from "../../redux/slices/apiSlice";
+import { BarChart, Bar, ResponsiveContainer, XAxis } from "recharts";
+import { TARGET_REALITY_LISTS } from "../../constants/menuLists";
 
 const TargetReality = () => {
   const state = useSelector((state) => state.apis.targetRealityData);
@@ -60,9 +60,9 @@ const TargetReality = () => {
       <div className="block-foot">
         <div className="legend-info mt-4 flex flex-col gap-2">
           {TARGET_REALITY_LISTS.map((item, idx) => (
-            <div key={idx} className="">
-              <div className="info-item-left">
-                <div>
+            <div key={idx} className="flex items-center justify-between">
+              <div className="info-item-left flex items-center gap-2.5">
+                <div className="info-item-icon w-10 h-10 rounded-sm flex flex-center justify-center">
                   <img src={item.icon} alt="" />
                 </div>
                 <div>
