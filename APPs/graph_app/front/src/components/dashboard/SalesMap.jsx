@@ -13,7 +13,7 @@ const SalesMap = () => {
     dispatch(fetchSalesMap());
   }, [dispatch]);
 
-  console.log(state);
+  //   console.log(state);
 
   const findByCountry = (countryId) => {
     const matchedCountry = state?.find(

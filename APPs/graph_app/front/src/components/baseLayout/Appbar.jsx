@@ -1,11 +1,11 @@
-import React from 'react';
-import { MdOutlineMenu } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
-import { setSidebarOpen } from '../../redux/slices/sidebarSlice';
-import AppbarLang from './AppbarLang';
-import { Icons } from '../../assets/icons';
-import AppbarProfile from './AppbarProfile';
-
+import React from "react";
+import { MdOutlineMenu } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { setSidebarOpen } from "../../redux/slices/sidebarSlice";
+import AppbarLang from "./AppbarLang";
+import { Icons } from "../../assets/icons";
+import AppbarProfile from "./AppbarProfile";
+import ModeControlls from "./ModeControlls";
 const Appbar = () => {
   const dispatch = useDispatch();
   return (
@@ -39,6 +39,7 @@ const Appbar = () => {
             <span className="w-2 h-2 rounded-full bg-red-600 absolute top-1 right-2"></span>
           </button>
           <AppbarProfile />
+          <ModeControlls />
         </div>
       </div>
     </div>

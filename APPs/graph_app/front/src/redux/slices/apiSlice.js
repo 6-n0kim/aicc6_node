@@ -16,6 +16,7 @@ import {
   GET_TARGET_REALITY_API_URL,
   GET_TOP_PRODUCTS_API_URL,
   GET_SALES_MAP_API_URL,
+  GET_VOLUME_SERVICES_API_URL,
 } from '../../constants/apiUrls';
 import { getRequest } from '../../constants/methods';
 
@@ -62,6 +63,12 @@ export const fetchSalesMap = createFetchThunk(
   GET_SALES_MAP_API_URL
 );
 
+// GET Volume Services data
+export const fetchVolumeServices = createFetchThunk(
+  'fetchVolumeServices',// action type
+  GET_VOLUME_SERVICES_API_URL
+);
+
 // 요청 성공 시 함수 정의
 const handleFullfilled = (stateKey) => (state, action) => {
   state[stateKey] = action.payload; // payload는 요청 성공 시 받은 데이터
@@ -82,6 +89,7 @@ const apiSlice = createSlice({
     targetRealityData: null,
     topProductsData: null,
     salesMapData: null,
+    volumeServicesData: null,
   },
   extraReducers: (builder) => {
     builder
@@ -104,7 +112,10 @@ const apiSlice = createSlice({
       .addCase(fetchTopProducts.rejected, handleRejected)
 
       .addCase(fetchSalesMap.fulfilled, handleFullfilled('salesMapData'))
-      .addCase(fetchSalesMap.rejected, handleRejected);
+      .addCase(fetchSalesMap.rejected, handleRejected)
+
+      .addCase(fetchVolumeServices.fulfilled, handleFullfilled('volumeServicesData'))
+      .addCase(fetchVolumeServices.rejected, handleRejected);
   },
 });
 
