@@ -1,4 +1,11 @@
-tables.sql
+DROP TABLE visitors;
+DROP TABLE customers;
+DROP TABLE revenue;
+DROP TABLE target_reality;
+DROP TABLE top_products;
+DROP TABLE sales_map;
+DROP TABLE volume_services;
+
 CREATE TABLE visitors(
   id SERIAL PRIMARY KEY NOT NULL,
   month VARCHAR(30) NOT NULL,
@@ -7,7 +14,7 @@ CREATE TABLE visitors(
   unique_customer INTEGER NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO visitors (month, new_customer, loyal_customer, unique_customer) VALUES 
 ('Jan', 50, 70, 120),
@@ -30,7 +37,7 @@ CREATE TABLE customers(
   this_month INTEGER NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO customers (month, last_month, this_month) VALUES 
 ('Jan', 400, 240),
@@ -39,7 +46,7 @@ INSERT INTO customers (month, last_month, this_month) VALUES
 ('Apr', 278, 190),
 ('May', 189, 480),
 ('Jun', 239, 380),
-('Jul', 349, 430),
+('Jul', 349, 430);
 
 CREATE TABLE revenue(
   id SERIAL PRIMARY KEY NOT NULL,
@@ -48,7 +55,7 @@ CREATE TABLE revenue(
   offline INTEGER NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO revenue (day, online, offline) 
 VALUES 
@@ -58,7 +65,7 @@ VALUES
 ('Thu', 16, 7),
 ('Fri', 13, 12),
 ('Sat', 17, 13),
-('Sun', 21, 12)
+('Sun', 21, 12);
 
 CREATE TABLE target_reality(
   id SERIAL PRIMARY KEY NOT NULL,
@@ -67,7 +74,7 @@ CREATE TABLE target_reality(
   target INTEGER NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO target_reality (month, reality, target) 
 VALUES 
@@ -77,7 +84,7 @@ VALUES
 ('Apr', 60, 70),
 ('May', 100, 75),
 ('Jun', 100, 75),
-('Jul', 100, 75)
+('Jul', 100, 75);
 
 CREATE TABLE top_products(
   id SERIAL PRIMARY KEY NOT NULL,
@@ -86,14 +93,14 @@ CREATE TABLE top_products(
   salesPercent INTEGER NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO top_products (name, papularityPercent, salesPercent) 
 VALUES 
 ('Home Decor Range', 70, 45),
 ('Disney Princess Pink Bag 18', 60, 29),
 ('Bathroom Essentials', 50, 18),
-('Apple Smartwatches', 30, 25)
+('Apple Smartwatches', 30, 25);
 
 CREATE TABLE sales_map(
   id SERIAL PRIMARY KEY NOT NULL,
@@ -102,7 +109,7 @@ CREATE TABLE sales_map(
   fill_color VARCHAR(30) NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO sales_map (country_id, country_name, fill_color) VALUES 
 ('840', 'United States of America', 'violet'),
@@ -123,7 +130,7 @@ CREATE TABLE volume_services(
   services INTEGER NOT NULL,
   create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-)
+);
 
 INSERT INTO volume_services (name, volume, services) VALUES
 ('A', 400, 240),
