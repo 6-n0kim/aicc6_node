@@ -5,7 +5,7 @@ import ItemPanel from "../Common/ItemPanel";
 const index = () => {
   return (
     <div className="page_section">
-      <Navbar activeIdx={2} />
+      <Navbar />
       <ItemPanel pageTitle="Proceeding Items" />
     </div>
   );
