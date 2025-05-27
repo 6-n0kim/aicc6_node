@@ -1,17 +1,7 @@
 const router = require('express').Router();
-const getRoutes = require('../controllers/getTasks');
+const { getTasks } = require('../controllers/getTasks');
 
-const routes = [
-  'tasks'
-];
-
-routes.forEach((route) => {
-  router.get(
-    `/${route}`,
-    getRoutes[
-      `get${route}`
-    ]
-  );
-});
+// :userId는 정해지지 않은 문자열이며 params로 받는다.
+router.get('/get_task/:userId', getTasks);
 
 module.exports = router;
