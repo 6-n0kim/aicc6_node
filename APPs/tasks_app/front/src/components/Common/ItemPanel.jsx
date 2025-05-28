@@ -1,18 +1,19 @@
 import React from "react";
 import Item from "./Item";
+import { useSelector } from "react-redux";
+import AddItem from "./AddItem";
 
 const ItemPanel = ({ pageTitle }) => {
-  const userKey = false;
+  const authData = useSelector((state) => state.auth.authData);
+  console.log(authData);
+  const userKey = authData?.sub;
   return (
     <div className="panel bg-[#212121] w-4/5 h-full rounded-md border border-gray-500 py-5 px-4 overflow-y-auto">
       {userKey ? (
         <div className="login-message w-full h-full">
           <div className="flex flex-wrap">
             <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
+            <AddItem />
           </div>
         </div>
       ) : (
