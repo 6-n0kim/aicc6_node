@@ -12,13 +12,13 @@ CREATE TABLE tasks (
 );
 
 -- 데이터 추가
-INSERT INTO tasks (_id, title, description, date, isCompleted, isImportant, userId) VALUES ('1234', '할일1', '할일1 설명', '2021-08-01', false, false, 'jy');
+INSERT INTO tasks (_id, title, description, date, isCompleted, isImportant, userId) VALUES ('1234', '할일1', '할일1 설명', '2021-08-01', false, false, 'marshall');
 
 -- 데이터 조회
-SELECT * FROM tasks WHERE userId = 'jy' ORDER BY created_at DESC(ASC);
+SELECT * FROM tasks WHERE userId = 'marshall' ORDER BY created_at DESC(ASC);
 
 -- 특정 사용자 데이터 필터 조회
-SELECT * FROM tasks WHERE userId = 'jy'
+SELECT * FROM tasks WHERE userId = 'marshallhch'
 
 -- 데이터 삭제
 DELETE FROM tasks WHERE _id = '1234';
@@ -44,3 +44,6 @@ EXECUTE FUNCTION update_updated_at_column();
 -- task 테이블의 created_at 필드는 행이 처음 삽입될 때만 설정.
 -- updated_at 필드는 행이 업데이트될 때마다 트리거를 통해 현재 시간으로 자동 갱신.
 -- BEFORE UPDATE 트리거는 레코드가 업데이트되기 직전에 updated_at 필드를 현재 시간으로 변경.
+
+
+

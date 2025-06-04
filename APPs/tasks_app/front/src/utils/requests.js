@@ -8,7 +8,6 @@ export async function postRequest(url, options) {
     ...options,
   };
 
-
   return await fetch(url, defaultOptions).then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -16,7 +15,6 @@ export async function postRequest(url, options) {
     return response.json();
   });
 }
-
 
 /* ====== Common Put Request Function ====== */
 export async function putRequest(url, options) {
@@ -35,7 +33,6 @@ export async function putRequest(url, options) {
   });
 }
 
-
 /* ====== Common Patch Request Function ====== */
 export async function patchRequest(url, options) {
   return await fetch(url, options).then((response) => {
@@ -45,7 +42,6 @@ export async function patchRequest(url, options) {
     return response.json();
   });
 }
-
 
 /* ====== Common Delete Request Function ====== */
 export async function deleteRequest(url, options) {
